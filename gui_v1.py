@@ -89,7 +89,8 @@ if __name__ == "__main__":
     import torch.nn.functional as F
     import torchaudio.transforms as tat
 
-    import tools.rvc_for_realtime as rvc_for_realtime
+    #import tools.rvc_for_realtime as rvc_for_realtime
+    import tools.knnvc_for_realtime as rvc_for_realtime
     from i18n.i18n import I18nAuto
     from configs.config import Config
 
@@ -961,7 +962,8 @@ if __name__ == "__main__":
 
         def get_device_samplerate(self):
             return int(
-                sd.query_devices(device=sd.default.device[0])["default_samplerate"]
+                16000
+                #sd.query_devices(device=sd.default.device[0])["default_samplerate"]
             )
 
     gui = GUI()
